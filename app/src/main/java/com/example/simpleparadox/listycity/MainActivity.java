@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         cityDataList = new ArrayList<>();
 
         for(int i=0;i<cities.length;i++){
-            cityDataList.add((new City(cities[i], provinces[i])));
+            cityDataList.add((new City(cities[i], provinces[i], "CAN")));
         }
 
         cityAdapter = new CustomList(this, cityDataList);

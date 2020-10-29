@@ -14,7 +14,7 @@ class CityListTest {
     }
 
     private City mockCity() {
-        return new City("Edmonton", "Alberta");
+        return new City("Edmonton", "Alberta", "CAN");
     }
 
     @Test
@@ -23,9 +23,20 @@ class CityListTest {
 
         assertEquals(1, cityList.countCities());
 
-        cityList.add(new City("Regina", "Saskatchewan"));
+        cityList.add(new City("Regina", "Saskatchewan", "CAN"));
 
         assertEquals(2, cityList.countCities());
-        assertTrue(cityList.hasCity(new City("Regina", "Saskatchewan")));
+        assertTrue(cityList.hasCity(new City("Regina", "Saskatchewan", "CAN")));
+    }
+
+    @Test
+    void testChangeCountry() {
+        CityList cityList = mockCityList();
+
+        assertEquals(1, cityList.countCities());
+
+        cityList.getCities().get(0).setCountry("USA");
+
+        assertEquals("USA", cityList.getCities().get(0).getCountryName());
     }
 }
