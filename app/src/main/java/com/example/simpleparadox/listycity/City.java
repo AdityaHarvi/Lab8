@@ -22,7 +22,7 @@ public class City implements Comparable<City>{
     String getCountryName() { return this.country; }
 
     void setCountry(String country) {
-
+        this.country = country;
     }
 
     @Override
